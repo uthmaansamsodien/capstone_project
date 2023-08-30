@@ -1,6 +1,6 @@
-const db = require('../config')
+const db = require('../config/config')
 const {hash, compare, hashSync} = require('bcrypt')
-const {createToken} = require ('../middleware/Authenticate.js')
+const {createToken} = require ('../middleware/AuthenticateUser')
 class Orders{
     fetchOrders(req, res){
         const query = `

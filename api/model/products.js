@@ -1,12 +1,11 @@
-//productsconst db = require("../config");
+const db = require('../config/config')
 const {hash, compare, hashSync} = require('bcrypt')
 const {createToken} = require("../middleware/AuthenticateUser")
 
 class Products  {
   fetchProducts(req, res) {
     const query = `
-    SELECT userID, userName, userSurname, userAdd, userPass, userImg
-    FROM Users;
+    SELECT * FROM Products;
         `
         db.query(query, 
             (err, results)=>{
@@ -17,11 +16,11 @@ class Products  {
                 })
             })
   }
-  fetchProducts(req, res) {
+  fetchProduct(req, res) {
     const query = `
-    SELECT userID, userName, userSurname, userAdd, userPass, userImg
-    FROM Users
-    WHERE userID = ${req.params.id};
+    SELECT prodID, prodName, prodInfo, prodBrand, prodPrice, prodImg
+    FROM Products
+    WHERE prodID = ${req.params.id};
     `
     db.query(query,
         (err, result) => {
@@ -32,10 +31,11 @@ class Products  {
             })
         })
   }
-  addProduct(req, res) {
+  addProducts(req, res) {
     const query = `
         INSERT INTO Products
         SET ?;
+                 
     `
     db.query(query, [req.body],
          (err) => {
@@ -51,7 +51,7 @@ class Products  {
     const query = `
     UPDATE Products
     SET ?
-    WHERE userID = ?
+    WHERE prodID = ?
     `
     db.query(query,
          [req.body, req.params.id],
@@ -63,15 +63,15 @@ class Products  {
             })
          })
   }
-  deleteUser(req, res) {
+  deleteProduct(req, res) {
     const query = `
     DELETE FROM Products
-    WHERE userID = ${req.params.id};
+    WHERE prodID = ${req.params.id};
     `
     db.query(query, (err)=>{
         if(err) throw err
         res.json({
-            status: statusCode,
+            status: res.statusCode,
             msg: "Removal Complete"
         })
     })
