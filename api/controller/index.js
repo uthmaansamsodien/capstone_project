@@ -37,7 +37,7 @@ routes.get("/products", (req, res) => {
   });
 
   routes.post("/registerUser", bodyParser.json(), (req, res) => {
-    users.register(req, res)
+    users.registerUser(req, res)
   });
 
   routes.delete("/user/:id", (req, res) => {
@@ -60,5 +60,6 @@ routes.get("/products", (req, res) => {
 
 module.exports = {
     express,
-    routes
+    routes,
+    verifyAToken
 }
