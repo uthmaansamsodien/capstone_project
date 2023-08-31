@@ -5,8 +5,8 @@ const {createToken} = require("../middleware/AuthenticateUser")
 class Users {
   fetchUsers(req, res) {
     const query = `
-        SELECT userID, userName, userSurname, userAdd, userPass, userImg
-        FROM Users;
+        SELECT * 
+        FROM users;
         `
         db.query(query, 
             (err, results)=>{
@@ -19,8 +19,8 @@ class Users {
   }
   fetchUser(req, res) {
     const query = `
-    SELECT userID, userName, userSurname, userAdd, userPass, userImg,
-    FROM Users
+    SELECT *
+    FROM users
     WHERE userID = ${req.params.id};
     `
     db.query(query,
@@ -36,7 +36,7 @@ class Users {
     const {emailAdd, userPass} = req.body
     // query
     const query = `
-    SELECT userName, userSurname,
+    SELECT userName, userSurname, userRole,
     userAdd, userPass, userImg,
     FROM Users
     WHERE userAdd = '${userAdd}';
@@ -82,7 +82,7 @@ class Users {
         }
     })
 }
-  async register(req, res) {
+  async registerUser(req, res) {
     const data = req.body
     //encrypt password
     data.userPass = await hash(data.userPass, 15)
@@ -93,7 +93,7 @@ class Users {
     }
     //query
     const query = `
-    INSERT INTO Users
+    INSERT INTO users
     SET ?
     `
     db.query(query, [data], (err)=>{
