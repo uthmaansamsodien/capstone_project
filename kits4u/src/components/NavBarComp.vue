@@ -5,7 +5,7 @@
           <router-link class="navbar-brand" to="/"
             ><img
               class="logo"
-              src="https://i.postimg.cc/DZhtqh3W/1-removebg-preview-2.png"
+              src="https://i.postimg.cc/90xgz3fS/result.png"
               alt="Logo"
           /></router-link>
           <button
@@ -24,30 +24,30 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mx-auto">
               <li class="nav-item">
-                <router-link class="nav-link bi-house" to="/"> HOME</router-link>
+                <router-link class="nav-link bi-house-door-fill" to="/"> HOME</router-link>
               </li>
               <li class="nav-item">
-                <router-link class="nav-link bi bi-person" to="/about">
+                <router-link class="nav-link bi bi-person-fill" to="/about">
                   ABOUT</router-link
                 >
               </li>
               <li class="nav-item">
-                <router-link class="nav-link bi-bag" to="/products">
+                <router-link class="nav-link bi-bag-fill" to="/products">
                   PRODUCTS</router-link
                 >
               </li>
               <li class="nav-item">
-                <router-link class="nav-link bi-file-earmark" to="/admin">
+                <router-link class="nav-link bi-file-earmark-fill" to="/admin">
                   ADMIN</router-link
                 >
               </li>
               <li class="nav-item">
-                <router-link class="nav-link bi-bag-check" to="/checkout">
+                <router-link class="nav-link bi-bag-check-fill" to="/checkout">
                   CHECKOUT</router-link
                 >
               </li>
               <li class="nav-item">
-                <router-link class="nav-link bi-telephone" to="/contact">
+                <router-link class="nav-link bi-telephone-fill" to="/contact">
                   CONTACT</router-link
                 >
               </li>
@@ -65,15 +65,17 @@ export default {};
 <style scoped>
 .logo {
   height: 10rem;
-  background-color: gainsboro;
 }
 .navbar {
   background-color: #303841;
-  font-family: 'Belleza', sans-serif;
+  font-family: 'Holtwood One SC', serif;
 }
 .nav-link{
-    background-color: gainsboro;
-    color: red;
+    color:gainsboro;
+}
+:hover.nav-link{
+  color: #d72323;
+  text-decoration: underline;
 }
 
 </style>
