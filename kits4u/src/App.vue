@@ -31,7 +31,5 @@ export default{
 .home{
   background-color: gainsboro;
 }
-.bgImg{
 
-}
 </style>

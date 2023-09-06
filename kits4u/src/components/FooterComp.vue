@@ -22,7 +22,7 @@
     position: absolute;
 }
 .foot_info{
-    color:gainsboro ;
+    color:gainsboro;
 }
 
 </style>
