@@ -1,7 +1,7 @@
 <template>
     <div class="container">
       <div class="row">
-        <div class="row justify-content-center gap-3" v-if="products">
+        <div class="row justify-content-center gap-5" v-if="products">
           <div
             v-for="product in products"
             class="card"
@@ -9,7 +9,7 @@
             :key="product.prodID"
           >
             <img
-              :src="product.prodID"
+              :src="product.prodImg"
               class="card-img-top"
               id="img"
               :alt="product.prodName"
@@ -17,13 +17,13 @@
             <div class="card-body">
               <h5 class="card-title">{{ product.prodName }}</h5>
               <p class="card-text">
-                Artist: {{ product.prodInfo }}
+                 {{ product.prodInfo }}
               </p>
               <p class="card-text">
                 Brand: {{ product.prodBrand }}
               </p>
               <p class="card-text">
-                  R{{ product.prodPrice }}
+                  R {{ product.prodPrice }}
               </p>
               <p class="card-text">
                    {{ product.prodImg  }}
@@ -56,7 +56,7 @@
   <style scoped>
   
     #img{
-      aspect-ratio: 4/6;
+      aspect-ratio: 1.9/2.1
     }
   </style>
     
