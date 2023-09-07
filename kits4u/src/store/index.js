@@ -1,6 +1,6 @@
 import { createStore } from 'vuex'
 // import axios from "axios";
-const bkURL = "https//localhost:3000/";
+const bkURL = "http://localhost:3000/";
 export default createStore({
   state: {
     users: null,
