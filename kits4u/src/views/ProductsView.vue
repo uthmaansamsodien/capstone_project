@@ -1,13 +1,16 @@
 <template>
     <div>
-
+        <CardComp/>
+        <SpinnerComp/>
     </div>
 </template>
 
 <script>
-    export default {
-        
-    }
+import CardComp from '@/components/CardComp.vue';
+
+export default {
+components: { CardComp }
+}
 </script>
 
 <style scoped>
