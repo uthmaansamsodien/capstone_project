@@ -1,7 +1,15 @@
 <template>
     <div>
+        <br/>
+        <h1 class="headprod">
+        <ins>
+            WHAT WE SELL:
+        </ins>
+        </h1>
+<br/>
         <CardComp/>
         <SpinnerComp/>
+        <br/>
     </div>
 </template>
 
@@ -14,5 +22,7 @@ components: { CardComp }
 </script>
 
 <style scoped>
-
+.headprod{
+    font-size:5rem;
+}
 </style>

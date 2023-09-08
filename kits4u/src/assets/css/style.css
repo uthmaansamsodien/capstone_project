@@ -15,6 +15,14 @@
     background-color: gainsboro !important;
     opacity: 85%;
 }
+.card-btn{
+    background-color:#303841 !important;
+    color:gainsboro !important;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 5%;
+    text-decoration: none;
+}
 
 @media screen and (max-width: 768px) {
     .homeImg{
@@ -26,6 +34,9 @@
     }
     .foot_info{
         font-size:0.7rem;
+    }
+    .card{
+        margin-left: 1.5rem;
     }
 
 }
