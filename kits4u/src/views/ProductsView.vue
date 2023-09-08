@@ -15,4 +15,4 @@ components: { CardComp }
 
 <style scoped>
 
-</style>     
+</style>
