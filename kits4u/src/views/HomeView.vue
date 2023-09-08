@@ -83,9 +83,12 @@ export default {
   margin: 2rem !important;
   padding: 5px;
   border-radius: 7%;
+  text-decoration: none;
 }
 :hover.btn-home{
   color: #d72323 !important ;
+  text-decoration: underline;
+
 }
 
 .bgImg{

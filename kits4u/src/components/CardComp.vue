@@ -25,22 +25,22 @@
               <p class="card-text">
                   R {{ product.prodPrice }}
               </p>
-              <p class="card-text">
-                   {{ product.prodImg  }}
-              </p>
             </div>
+            <button class="card-btn">Add to cart</button>
+            <button class="card-btn">View</button>
+
             </div>
         </div>
         <div v-else class="row">
           <SpinnerCompVue />
         </div>
-      </div>
+      </div> 
     </div>
   </template>
   <script>
   import SpinnerCompVue from "@/components/SpinnerComp.vue";
   export default {
-    computed: {
+    computed: { 
       products() {
         return this.$store.state.products;
       },
