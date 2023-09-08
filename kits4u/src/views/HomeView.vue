@@ -10,11 +10,7 @@
           </div>
           <div class="col name">WELCOME TO KITS 4  U</div>
           <div>
-            <div>
-              <button class="btn btn-home" href="./ProductsView.vue">See products:</button>
-              <button class="btn btn-home" href="./ContactView.vue">Contact us:</button>
-            </div>
-            <br/>
+            <br>
             <div id="carouselExampleIndicators" class="carousel slide">
               <div class="carousel-indicators">
                 <button type="butt3  B on" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -45,9 +41,22 @@
               <span class="visually-hidden">Next</span>
             </button>
           </div>
+            <div>
+              <br/>
+              <h1 class="subhead">
+                VIEW OUR INTERNATIONAL COLLECTION
+              </h1>
+            </div>
+         
+            <br/>
+
+            <div>
+              <router-link class="btn-home" to="/products">See products:</router-link>
+              <router-link class="btn-home" to="/contact">Contact us:</router-link>
+            </div>
+           <br>
         </div>
       </div>
-      <br/>
       <!-- <div class="bgImg">
         <img src="https://i.postimg.cc/2ySp67CH/CELEBS-IN-FOOTBALL-SHIRTS.webp" alt="logo">
       </div> -->
@@ -72,6 +81,8 @@ export default {
   background-color:#303841 !important;
   color:gainsboro !important;
   margin: 2rem !important;
+  padding: 5px;
+  border-radius: 7%;
 }
 :hover.btn-home{
   color: #d72323 !important ;
@@ -85,6 +96,17 @@ export default {
 }
 .homeImg{
   width: 30rem;
+}
+:hover.homeImg{
+  
+  transition: transform .3s;
+/*transition:  .3s;*/
+  transform: scale(1.1);
+}
+.subhead{
+  color: #d72323;
+  background-color: gainsboro;
+  opacity: 85%;
 }
 
 </style> 
