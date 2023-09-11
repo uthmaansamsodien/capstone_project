@@ -33,7 +33,7 @@ class Users {
         })
   }
   login(req, res) {
-    const {emailAdd, userPass} = req.body
+    const {userAdd, userPass} = req.body
     // query
     const query = `
     SELECT userName, userSurname, userRole,
