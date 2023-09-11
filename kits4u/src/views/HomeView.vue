@@ -43,16 +43,17 @@
           </div>
             <div>
               <br/>
-              <h1 class="subhead">
-                VIEW OUR INTERNATIONAL COLLECTION
-              </h1>
+             <div>
+              <h1 class="subhead bi bi-arrow-up-square-fill" >
+                VIEW OUR INTERNATIONAL COLLECTION <span class="bi bi-arrow-up-square-fill"></span>
+              </h1></div>
             </div>
          
             <br/>
 
             <div>
-              <router-link class="btn-home" to="/products">See products:</router-link>
-              <router-link class="btn-home" to="/contact">Contact us:</router-link>
+              <a class="btn-home" href="/products">See products:</a>
+              <a class="btn-home" href="/contact">Contact us:</a>
             </div>
            <br>
         </div>
