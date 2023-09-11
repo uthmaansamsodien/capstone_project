@@ -5,7 +5,12 @@ const routes = [
   {
     path: '/',
     name: 'home',
-    component: HomeView
+    component: HomeView,
+    // beforeEnter() {
+    //   if(!cookies.get('GrantedUserAccess')) {
+    //   router.push({name: "login"})
+    //   }
+    // }
   },
   {
     path: '/about',
@@ -15,22 +20,52 @@ const routes = [
   {
     path: '/products',
     name: 'products',
-    component: () => import( '../views/ProductsView.vue')
+    component: () => import( '../views/ProductsView.vue'),
+    // beforeEnter() {
+    //   if(!cookies.get('GrantedUserAccess')) {
+    //   router.push({name: "login"})
+    //   }
+    // }
   },
   {
     path: '/admin',
     name: 'admin',
-    component: () => import( '../views/AdminView.vue')
+    component: () => import( '../views/AdminView.vue'),
+    // beforeEnter() {
+    //   if(!cookies.get('GrantedUserAccess')) {
+    //   router.push({name: "login"})
+    //   }
+    // }
   },
   {
     path: '/checkout',
     name: 'checkout',
-    component: () => import( '../views/CheckoutView.vue')
+    component: () => import( '../views/CheckoutView.vue'),
+    // beforeEnter() {
+    //   if(!cookies.get('GrantedUserAccess')) {
+    //   router.push({name: "login"})
+    //   }
+    // }
   },
   {
     path: '/contact',
     name: 'contact',
-    component: () => import( '../views/ContactView.vue')
+    component: () => import( '../views/ContactView.vue'),
+    // beforeEnter() {
+    //   if(!cookies.get('GrantedUserAccess')) {
+    //   router.push({name: "login"})
+    //   }
+    // }
+  },
+  {
+    path: '/login',
+    name: 'contact',
+    component: () => import( '../views/LoginView.vue')
+  },
+  {
+    path: '/register',
+    name: 'register',
+    component: () => import( '../views/RegisterView.vue')
   }
 ]
 

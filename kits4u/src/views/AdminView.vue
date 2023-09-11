@@ -15,8 +15,7 @@
                     <th id="brand">Brand</th>
                     <th id="price">Price (ZAR)</th>
                     <th id="prodImg">Image</th>
-                    <!-- <th id="amount">Quantity</th> -->
-                    <th id="edit">Update</th>
+                    <th id="edit">Update</th> 
                     <th id="del" >Delete</th>
                 </tr>
               </thead>

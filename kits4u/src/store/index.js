@@ -1,6 +1,11 @@
 import { createStore } from 'vuex'
 import axios from "axios";
+import sweet from "sweet-alert"
+import router from "@/router"
+import { useCookies } from "vue3-cookies"
+import authUser from "@/services/AuthenticateUser"
 const bkURL = "http://localhost:3000/";
+const { cookies } = useCookies();
 export default createStore({
   state: {
     users: null,
@@ -38,6 +43,7 @@ export default createStore({
        context.commit("setMsg","An error has occured")
       }
     },
+
     async fetchUsers(context) {
       try {
         const { data } = await axios.get(`${bkURL}users`);
@@ -45,7 +51,69 @@ export default createStore({
       } catch (e) {
         alert(e.message);
       }
-    }
-  },
-  modules: {},
-});
+    },
+
+    async registerUser(context, payload) {
+      try {
+        const { msg } = (await axios.post(`${bkURL}/register`, payload))
+          .data;
+        if (msg) {
+          sweet({
+            title: "Registration",
+            text: msg,
+            icon: "success",
+            timer: 3000,
+          });
+          //explain line  below
+          context.dispatch("fetchUsers");
+          cookies.set(" ", { token, msg, result });
+          router.push({ name: "home" });
+        } else {
+          sweet({
+            title: "Error",
+            text: "Oops, an error occured",
+            icon: "error",
+            timer: 3000,
+          });
+        }
+      } catch (e) {
+        context.commit(console.log(e));
+      }
+    },
+    async login(context, payload) {
+      try {
+        const { msg, token, result } = (
+          await axios.post(`${bkURL}/login`, payload)
+        ).data;
+        if (result) {
+          context.commit("setUser", { result, msg });
+          cookies.set("GrantedUserAccess", { token, msg, result });
+          authUser.applyToken(token);
+          sweet({
+            title: msg,
+            text: `Welcome Back, ${result?.first_name}
+              ${result?.last_name}`,
+            icon: "success",
+            timer: 3000,
+          });
+          router.push({ name: "home" });
+        } else {
+          sweet({
+            title: "Error",
+            text: "Oops, an error occured",
+            icon: "error",
+            timer: 3000,
+          });
+        }
+      } catch (e) {
+        context.commit(console.log(e));
+      }
+    },
+    async logout(context) {
+      context.commit("setUser")
+      cookies.remove("GrantedUserAccess")
+      router.push({ name: "login" })
+    },
+  }
+})
+  

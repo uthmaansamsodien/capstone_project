@@ -29,7 +29,7 @@
                 <img src="https://i.postimg.cc/tT3K1fkF/methode-sundaytimes-prod-web-bin-a305e594-6777-11ed-9960-a1f4eb634c35.jpg" class="d-block w-100" alt="logo">
               </div>
               <div class="carousel-item">
-                <img src="https://i.postimg.cc/QdjFY9H3/Wales-Portraits-FIFA-World-Cup-Qatar-2022.webp" class="d-block w-100" alt="logo">
+                <img src="https://i.postimg.cc/jdQLPX7P/Portugal-Portraits-FIFA-World-Cup-Qatar-2022.jpg" class="d-block w-100" alt="logo">
               </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
