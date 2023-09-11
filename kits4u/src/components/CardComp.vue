@@ -22,7 +22,7 @@
               <p class="card-text">
                 Brand: {{ product.prodBrand }}
               </p>
-              <p class="card-text">
+              <p class="card-text price">
                   R {{ product.prodPrice }}
               </p>
             </div>
@@ -57,6 +57,9 @@
   
     #img{
       aspect-ratio: 1.9/2.1
+    }
+    :hover.price{
+      color:#d72323;
     }
   </style>
     

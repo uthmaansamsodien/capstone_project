@@ -23,6 +23,17 @@
     border-radius: 5%;
     text-decoration: none;
 }
+.headprod{
+    font-size:5rem;
+}
+:hover.headprod{
+   color:#d72323;
+}
+:hover.card-img-top{
+  
+    transition: transform .3s;
+      transform: scale(1.1);
+}
 
 @media screen and (max-width: 768px) {
     .homeImg{
@@ -38,5 +49,7 @@
     .card{
         margin-left: 1.5rem;
     }
-
+    .headprod{
+        font-size: 24px;
+    }
 }

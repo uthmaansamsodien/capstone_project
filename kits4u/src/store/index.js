@@ -35,7 +35,7 @@ export default createStore({
         const { data } = await axios.get(`${bkURL}products`);
         context.commit("setProducts", data.results);
       } catch (e) {
-        alert(e.message);
+       context.commit("setMsg","An error has occured")
       }
     },
     async fetchUsers(context) {

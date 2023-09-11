@@ -22,7 +22,5 @@ components: { CardComp }
 </script>
 
 <style scoped>
-.headprod{
-    font-size:5rem;
-}
+
 </style>

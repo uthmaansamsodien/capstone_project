@@ -1,62 +1,67 @@
 <template>
-    <div>
-      <nav class="navbar navbar-expand-lg">
-        <div class="container-fluid">
-          <router-link class="navbar-brand" to="/"
-            ><img
-              class="logo"
-              src="https://i.postimg.cc/90xgz3fS/result.png"
-              alt="Logo"
-          /></router-link>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span><i class="bi bi-list"></i></span>
-          </button>
-          <div class="head">
-          </div>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mx-auto">
-              <li class="nav-item">
-                <router-link class="nav-link bi-house-door-fill" to="/"> HOME</router-link>
-              </li>
-              <li class="nav-item">
-                <router-link class="nav-link bi bi-person-fill" to="/about">
-                  ABOUT</router-link
-                >
-              </li>
-              <li class="nav-item">
-                <router-link class="nav-link bi-bag-fill" to="/products">
-                  PRODUCTS</router-link
-                >
-              </li>
-              <li class="nav-item">
-                <router-link class="nav-link bi-file-earmark-fill" to="/admin">
-                  ADMIN</router-link
-                >
-              </li>
-              <li class="nav-item">
-                <router-link class="nav-link bi-bag-check-fill" to="/checkout">
-                  CHECKOUT</router-link
-                >
-              </li>
-              <li class="nav-item">
-                <router-link class="nav-link bi-telephone-fill" to="/contact">
-                  CONTACT</router-link
-                >
-              </li>
-            </ul>
-          </div>
+  <div>
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <router-link class="navbar-brand" to="/"
+          ><img
+            class="logo"
+            src="https://i.postimg.cc/90xgz3fS/result.png"
+            alt="Logo"
+        /></router-link>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span><i class="bi bi-list"></i></span>
+        </button>
+        <div class="head"></div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item">
+              <router-link class="nav-link bi-house-door-fill" to="/">
+                HOME</router-link
+              >
+            </li>
+            <li class="nav-item">
+              <router-link class="nav-link bi bi-person-fill" to="/about">
+                ABOUT</router-link
+              >
+            </li>
+            <li class="nav-item">
+              <router-link class="nav-link bi-bag-fill" to="/products">
+                PRODUCTS</router-link
+              >
+            </li>
+            <li class="nav-item">
+              <router-link class="nav-link bi-file-earmark-fill" to="/admin">
+                ADMIN</router-link
+              >
+            </li>
+            <li class="nav-item">
+              <router-link class="nav-link bi-bag-check-fill" to="/checkout">
+                CHECKOUT</router-link
+              >
+            </li>
+            <li class="nav-item">
+              <router-link class="nav-link bi-telephone-fill" to="/contact">
+                CONTACT</router-link
+              >
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-danger" type="submit">Search</button>
+          </form>
         </div>
-      </nav>
-    </div>
-  </template>
+      </div>
+    </nav>
+  </div>
+</template>
 
 <script>
 export default {};
@@ -68,14 +73,16 @@ export default {};
 }
 .navbar {
   background-color: #303841;
-  font-family: 'Holtwood One SC', serif;
+  font-family: "Holtwood One SC", serif;
 }
-.nav-link{
-    color:gainsboro;
+.nav-link {
+  color: gainsboro;
 }
-:hover.nav-link{
+:hover.nav-link {
   color: #d72323;
   text-decoration: underline;
 }
-
+.form-control{
+  background-color:gainsboro;
+}
 </style>
