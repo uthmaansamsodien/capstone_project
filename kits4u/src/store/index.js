@@ -55,8 +55,7 @@ export default createStore({
 
     async registerUser(context, payload) {
       try {
-        const { msg } = (await axios.post(`${bkURL}register`, payload))
-          .data
+        const { msg } = (await axios.post(`${bkURL}register`, payload)).data
         if (msg) {
           sweet({
             title: "Registration",
@@ -82,7 +81,7 @@ export default createStore({
     async login(context, payload) {
       try {
         const { msg, token, result } = (
-          await axios.post(`${bkURL}/login`, payload)
+          await axios.post(`${bkURL}login`, payload)
         ).data;
         if (result) {
           context.commit("setUser", { result, msg });

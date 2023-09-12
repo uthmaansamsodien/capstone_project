@@ -98,11 +98,6 @@
         },
       };
     },
-    computed: {
-      user() {
-        return this.$store.state.user;
-      },
-    },
     methods: {
       registerUser() {
         this.$store.dispatch("registerUser", this.payload);
