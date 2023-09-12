@@ -108,6 +108,7 @@ class Users {
         // })
         res.json({
             status: res.statusCode,
+            token,
             msg: "Registration Complete"
         })
     })
