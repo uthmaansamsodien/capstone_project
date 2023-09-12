@@ -2,7 +2,7 @@
     <div>
       <div class="container">
         <div class="row">
-          <form class="form" @submit.prevent="register">
+          <form class="form" @submit.prevent="registerUser">
             <div class="form-control-wrapper">
               <span class="inline">
                 <input
@@ -85,8 +85,8 @@
     </div>
   </template>
   <script>
-  import { useCookies } from "vue3-cookies";
-  const { cookies } = useCookies();
+    // import { useCookies } from "vue3-cookies";
+    // const { cookies } = useCookies();
   export default {
     data() {
       return {
@@ -107,16 +107,16 @@
       },
     },
     methods: {
-      register() {
-        this.$store.dispatch("register", this.payload);
+      registerUser() {
+        this.$store.dispatch("registerUser", this.payload);
       },
     },
     // beforeCreate() {
     //   this.$store.dispatch('fetchUsers')
     // },
-      mounted() {
-      console.log(cookies.get("GrantedUserAccess"));
-    },
+    //   mounted() {
+    //   console.log(cookies.get("GrantedUserAccess"));
+    // },
     components:{
       // SpinnerComp
   }
