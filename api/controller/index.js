@@ -1,8 +1,6 @@
 const express = require("express");
-const {verifyAToken} = require('../middleware/AuthenticateUser')
 const bodyParser = require("body-parser");
 const routes = express.Router();
-
 const { users, products } = require("../model");
 
 // Product routes
@@ -36,7 +34,7 @@ routes.get("/products", (req, res) => {
     users.fetchUser(req, res);
   });
 
-  routes.post("/registerUser", bodyParser.json(), (req, res) => {
+  routes.post("/register", bodyParser.json(), (req, res) => {
     users.registerUser(req, res)
   });
 
@@ -61,5 +59,4 @@ routes.get("/products", (req, res) => {
 module.exports = {
     express,
     routes,
-    verifyAToken
 }

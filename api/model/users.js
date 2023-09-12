@@ -38,7 +38,7 @@ class Users {
     const query = `
     SELECT userName, userSurname, userRole,
     userAdd, userPass, userImg,
-    FROM Users
+    FROM users
     WHERE userAdd = '${userAdd}';
     `
     db.query(query, async (err, result)=>{
@@ -114,7 +114,7 @@ class Users {
   }
   updateUser(req, res) {
     const query = `
-    UPDATE Users
+    UPDATE users
     SET ?
     WHERE userID = ?
     `
@@ -130,7 +130,7 @@ class Users {
   }
   deleteUser(req, res) {
     const query = `
-    DELETE FROM Users
+    DELETE FROM users
     WHERE userID = ${req.params.id};
     `
     db.query(query, (err)=>{
