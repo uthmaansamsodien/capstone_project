@@ -55,8 +55,8 @@ export default createStore({
 
     async registerUser(context, payload) {
       try {
-        const { msg } = (await axios.post(`${bkURL}registerUser`, payload))
-          .data;
+        const { msg } = (await axios.post(`${bkURL}register`, payload))
+          .data
         if (msg) {
           sweet({
             title: "Registration",
@@ -66,7 +66,6 @@ export default createStore({
           });
           //explain line  below
           context.dispatch("fetchUsers");
-          cookies.set(" ", { token, msg, result });
           router.push({ name: "home" });
         } else {
           sweet({
