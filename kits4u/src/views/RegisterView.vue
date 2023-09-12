@@ -69,7 +69,7 @@
             </div>
             <div class="form-control-wrapper">
               <div class="col">
-                <button type="submit" class="btn btn-success">
+                <button type="submit" class="btn btn-danger">
                   Submit
                   <span
                     class="spinner-border spinner-border-sm"
@@ -85,8 +85,6 @@
     </div>
   </template>
   <script>
-    // import { useCookies } from "vue3-cookies";
-    // const { cookies } = useCookies();
   export default {
     data() {
       return {
@@ -103,7 +101,6 @@
     computed: {
       user() {
         return this.$store.state.user;
-        //  || JSON.parse( cookies.get('GrantedUserAccess'))
       },
     },
     methods: {
@@ -111,15 +108,6 @@
         this.$store.dispatch("registerUser", this.payload);
       },
     },
-    // beforeCreate() {
-    //   this.$store.dispatch('fetchUsers')
-    // },
-    //   mounted() {
-    //   console.log(cookies.get("GrantedUserAccess"));
-    // },
-    components:{
-      // SpinnerComp
-  }
   };
   </script>
   <style scoped>
