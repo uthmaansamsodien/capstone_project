@@ -4,7 +4,7 @@ import sweet from "sweet-alert"
 import router from "@/router"
 import { useCookies } from "vue3-cookies"
 import authUser from "@/services/AuthenticateUser"
-const bkURL = "http://localhost:3000/";
+const bkURL = "https://kits4u.onrender.com/";
 const { cookies } = useCookies();
 export default createStore({
   state: {
@@ -55,7 +55,7 @@ export default createStore({
 
     async registerUser(context, payload) {
       try {
-        const { msg } = (await axios.post(`${bkURL}/register`, payload))
+        const { msg } = (await axios.post(`${bkURL}registerUser`, payload))
           .data;
         if (msg) {
           sweet({
