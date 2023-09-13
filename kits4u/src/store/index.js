@@ -11,6 +11,7 @@ export default createStore({
     users: null,
     user: null,
     products: null,
+    addProduct:null,
     product: null,
     spinner: false,
     // token: null,
@@ -59,7 +60,7 @@ export default createStore({
     async addProduct( {commit} , productData) {
       try {
         const response = await axios.post(`${bkURL}product`, productData);
-        commit('setAddProduct', response.data);
+        commit('setAddProducts', response.data);
         console.log(response.data);
         location.reload();
       } catch (error) {

@@ -3,6 +3,8 @@
         <div id="style_table" class="container">
             <h1 class="workhead headprod"><ins>WORKSPACE</ins></h1>
             <button class="btnsort">Sort <span class="bi bi-filter"></span></button>
+            <br/>
+            <br/>
            <addProductComp/> 
             <br/>
             <br/>
@@ -38,7 +40,34 @@
            </div>
            <h1 class="workhead"><ins>USERS</ins></h1>
            <br/>
-           <UserComp/>
+           <table class="table table-hover" id="table">
+            <thead class="head">
+            <tr>
+                <th id="id">ID</th>
+                <th id="club">Name</th>
+                <th id="info">Surname</th>
+                <th id="brand">Role</th>
+                <th id="price">Email</th>
+                <th id="prodImg">User Image</th>
+                <th id="update">update</th>
+                <th id="delete">delete</th>
+              </tr>
+          </thead>
+          <tbody id="product-table">
+            <tr v-for="user in users" :key="user.userID">
+                <td id="id">{{user.userID}}</td>
+                <td id="club">{{ user.userName }}</td>
+                <td id="info">{{ user.userSurname}}</td>
+                <td id="brand">{{ user.userRole}}</td>
+                <td id="price">{{ user.userAdd}}</td>                    
+                <td id="prodImg"><img class="Img" :src="user.userImg" :alt="user.firstName" style="width: 13.5rem"></td>
+                <td id="edit"><button class="edit"> edit <span  class="bi bi-pencil-fill"></span></button></td>
+                <!-- <td id="del" ><button class="del bi bi-trash3"> delete</button></td> -->
+                <td><button  type="button" class="edit" @click="deleteUser(users.userID)">delete <span class="bi bi-trash3"></span>
+                </button></td>
+              </tr>
+          </tbody>
+          </table>
     </div>
 </template>
 
@@ -56,9 +85,14 @@ export default {
     products() {
       return this.$store.state.products;
     },
+
+    users(){
+      return this.$store.state.users;
+    }
   },
   mounted() {
     this.$store.dispatch("fetchProducts");
+    this.$store.dispatch("fetchUsers");
   },
   methods: {
     deleteProduct(prodID) {
