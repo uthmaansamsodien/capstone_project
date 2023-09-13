@@ -3,7 +3,7 @@
         <br/>
         <h1 class="headprod">
         <ins>
-            WHAT WE SELL:
+            Products:
         </ins>
         </h1>
 <br/>

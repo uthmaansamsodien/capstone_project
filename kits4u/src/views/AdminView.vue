@@ -1,7 +1,7 @@
 <template>
     <div>
         <div id="style_table" class="container">
-            <h1 class="workhead"><ins>WORKSPACE</ins></h1>
+            <h1 class="workhead headprod"><ins>WORKSPACE</ins></h1>
             <button class="btnsort">Sort <span class="bi bi-filter"></span></button>
             <br/>
             <br/>
@@ -28,7 +28,9 @@
                     <td id="price">{{ product.prodPrice}}</td>                    
                     <td id="prodImg"><img class="Img" :src="product.prodImg" :alt="products.prodName" style="width: 13.5rem"></td>
                     <td id="edit"><button class="edit"> edit <span  class="bi bi-pencil-fill"></span></button></td>
-                    <td id="del" ><button class="del bi bi-trash3"> delete</button></td>
+                    <!-- <td id="del" ><button class="del bi bi-trash3"> delete</button></td> -->
+                    <td><button  type="button" class="edit" @click="deleteProduct(product.prodID)">delete <span class="bi bi-trash3"></span>
+                    </button></td>
                   </tr>
               </tbody>
               </table>
@@ -55,6 +57,10 @@ export default {
   mounted() {
     this.$store.dispatch("fetchProducts");
   },
+  methods: {
+    deleteProduct(prodID) {
+        this.$store.dispatch("DeleteProducts", prodID)
+      }}
 };  
 </script>
 

@@ -91,9 +91,9 @@
         payload: {
           userName: "",
           userSurname: "",
+          userRole: "",
           userAdd: "",
           userPass: "",
-          userRole: "",
           userImg: "https://i.postimg.cc/3rZ0H0D8/profile-Image.png",
         },
       };

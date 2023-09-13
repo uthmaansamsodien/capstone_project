@@ -20,7 +20,6 @@
                 class="form-control"
                 placeholder="password"
                 minlength="4"
-                maxlength="12"
                 v-model="payload.userPass"
               />
             </span>
@@ -76,7 +75,7 @@
     },
     methods: {
       login() {
-        this.$store.dispatch("login", this.payload);
+        this.$store.dispatch('login', this.payload);
       },
       // logout() {
       //   this.$store.dispatch("logout", this.payload)

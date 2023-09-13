@@ -1,6 +1,6 @@
 import { createStore } from 'vuex'
 import axios from "axios";
-import sweet from "sweet-alert"
+import sweet from "sweetalert"
 import router from "@/router"
 import { useCookies } from "vue3-cookies"
 import authUser from "@/services/AuthenticateUser"
@@ -13,8 +13,8 @@ export default createStore({
     products: null,
     product: null,
     spinner: false,
-    token: null,
-    msg: null,
+    // token: null,
+    // msg: null,
   },
   getters: {},
   mutations: {
@@ -43,6 +43,14 @@ export default createStore({
        context.commit("setMsg","An error has occured")
       }
     },
+    async fetchProduct(context, prodID) {
+      try {
+        const data = await axios.get(`${bkURL}products/${prodID}`);
+        context.commit('setProduct', data.results)
+      } catch (e) {
+        console.log(e);
+      }
+    },
 
     async fetchUsers(context) {
       try {
@@ -55,7 +63,7 @@ export default createStore({
 
     async registerUser(context, payload) {
       try {
-        const { msg } = (await axios.post(`${bkURL}register`, payload)).data
+        const {msg} = (await axios.post(`${bkURL}register`, payload)).data
         if (msg) {
           sweet({
             title: "Registration",
@@ -65,7 +73,7 @@ export default createStore({
           });
           //explain line  below
           context.dispatch("fetchUsers");
-          router.push({ name: "home" });
+          router.push({ name: "login" });
         } else {
           sweet({
             title: "Error",
@@ -75,22 +83,23 @@ export default createStore({
           });
         }
       } catch (e) {
-        context.commit(console.log(e));
+        console.log(e);
       }
     },
     async login(context, payload) {
       try {
         const { msg, token, result } = (
           await axios.post(`${bkURL}login`, payload)
-        ).data;
+          ).data;
+          console.log(msg, token, result);
         if (result) {
           context.commit("setUser", { result, msg });
           cookies.set("GrantedUserAccess", { token, msg, result });
           authUser.applyToken(token);
           sweet({
             title: msg,
-            text: `Welcome Back, ${result?.first_name}
-              ${result?.last_name}`,
+            text: `Welcome Back, ${result?.userName}
+              ${result?.userSurname}`,
             icon: "success",
             timer: 3000,
           });
@@ -107,6 +116,19 @@ export default createStore({
         context.commit(console.log(e));
       }
     },
+    async DeleteProducts(context, prodID) {
+      try {
+        const response = await axios.delete(`${bkURL}product/${prodID}`);
+        context.commit("setDeleteProducts", response.data);
+        // Assuming setDeleteProducts mutation updates some state
+        location.reload();
+      } catch (e) {
+        console.error("An error occurred:", e); // Log the error for debugging
+        context.commit("setMsg", "An error occurred");
+      }
+    },
+    
+
     async logout(context) {
       context.commit("setUser")
       cookies.remove("GrantedUserAccess")

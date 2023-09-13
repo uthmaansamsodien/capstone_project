@@ -27,7 +27,18 @@
               </p>
             </div>
             <button class="card-btn">Add to cart</button>
-            <button class="card-btn">View</button>
+            <router-link :to=
+                      "{name: 'single',
+                      params: {id: product.prodID},
+                      query: {
+                          prodName: product.prodName,
+                          prodInfo: product.prodInfo,
+                          prodBrand: product.prodBrand,
+                          prodPrice: product.prodPrice,
+                          prodImg: product.prodImg,
+                        }
+                    }" class="card-btn">View More</router-link><span>
+                        </span>
 
             </div>
         </div>
@@ -40,10 +51,12 @@
   <script>
   import SpinnerCompVue from "@/components/SpinnerComp.vue";
   export default {
+    props: ["prodID"],
     computed: { 
       products() {
         return this.$store.state.products;
       },
+      
     },
     mounted() {
       this.$store.dispatch("fetchProducts");
