@@ -59,13 +59,19 @@ const routes = [
   },
   {
     path: '/login',
-    name: 'contact',
+    name: 'login',
     component: () => import( '../views/LoginView.vue')
   },
   {
     path: '/register',
     name: 'register',
     component: () => import( '../views/RegisterView.vue')
+  },
+  {
+    path: "/single/:id",
+    name: "single",
+    props: true,
+    component: () => import("../views/SingleView.vue"),
   }
 ]
 
