@@ -30,9 +30,13 @@ export default createStore({
     setProduct(state, product) {
       state.product = product;
     },
+    setAddProduct(state,data){
+      state.addProduct = data
+    },
     setSpinner(state, value) {
       state.spinner = value;
     }
+
   },
   actions: {
     async fetchProducts(context) {
@@ -49,6 +53,17 @@ export default createStore({
         context.commit('setProduct', data.results)
       } catch (e) {
         console.log(e);
+      }
+    },
+
+    async addProduct( {commit} , productData) {
+      try {
+        const response = await axios.post(`${bkURL}product`, productData);
+        commit('setAddProduct', response.data);
+        console.log(response.data);
+        location.reload();
+      } catch (error) {
+        console.error('An error occurred:', error);
       }
     },
 

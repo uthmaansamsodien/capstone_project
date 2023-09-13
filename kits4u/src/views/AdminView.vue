@@ -3,6 +3,7 @@
         <div id="style_table" class="container">
             <h1 class="workhead headprod"><ins>WORKSPACE</ins></h1>
             <button class="btnsort">Sort <span class="bi bi-filter"></span></button>
+           <addProductComp/> 
             <br/>
             <br/>
 
@@ -43,10 +44,12 @@
 
 <script>
       import SpinnerCompVue from "@/components/SpinnerComp.vue";
+      import addProductComp from "@/components/addProductComp.vue"
 //   import UserComp from "@/components/";
 export default {
   components: {
     SpinnerCompVue,
+    addProductComp
     // UserComp,
   },
   computed: {
