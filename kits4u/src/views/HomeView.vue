@@ -104,7 +104,6 @@ export default {
 :hover.homeImg{
   
   transition: transform .3s;
-/*transition:  .3s;*/
   transform: scale(1.1);
 }
 .subhead{

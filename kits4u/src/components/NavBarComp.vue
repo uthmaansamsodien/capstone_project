@@ -48,22 +48,22 @@
               >
             </li>
             <li class="nav-item">
-              <router-link class="nav-link bi-box-arrow-in-right" to="/login">
-                LOGIN</router-link
-              >
-            </li>
-            <li class="nav-item">
-              <router-link class="nav-link bi-r-circle" to="/register">
-                REGISTER</router-link
-              >
-            </li>
-            <li class="nav-item">
               <router-link class="nav-link bi-telephone-fill" to="/contact">
                 CONTACT</router-link
               >
             </li>
+            <li class="nav-item">
+              <router-link class="nav-link bi-r-circle-fill" to="/register">
+                REGISTER</router-link
+              >
+            </li>
+            <li class="nav-item">
+              <router-link class="nav-link bi-door-open-fill" to="/login">
+                LOGIN</router-link
+              >
+            </li>
             <li class="nav-item" data-bs-dismiss="offcanvas">
-              <router-link class="nav-link bi-box-arrow-left" to="/login"
+              <router-link class="nav-link bi-door-closed-fill" to="/login"
                  @click="logout">LOGOUT</router-link
               >
             </li>
