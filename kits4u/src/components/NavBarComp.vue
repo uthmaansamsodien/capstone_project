@@ -21,7 +21,7 @@
         </button>
         <div class="head"></div>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mx-auto">
+          <ul class="navbar-nav ms-auto">
             <li class="nav-item">
               <router-link class="nav-link bi-house-door-fill" to="/">
                 HOME</router-link
@@ -43,7 +43,7 @@
               >
             </li>
             <li class="nav-item">
-              <router-link class="nav-link bi-bag-check-fill" to="/checkout">
+              <router-link class="nav-link bi-cart-fill" to="/checkout">
                 CHECKOUT</router-link
               >
             </li>
@@ -68,10 +68,7 @@
               >
             </li>
           </ul>
-          <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-danger" type="submit">Search</button>
-          </form>
+     
         </div>
       </div>
     </nav>
@@ -99,5 +96,13 @@ export default {};
 }
 .form-control{
   background-color:gainsboro;
+}
+
+.bi-bi-list {
+  color: #303841;
+}
+
+.navbar-toggler {
+  background-color: gainsboro
 }
 </style>

@@ -34,7 +34,10 @@
     transition: transform .3s;
       transform: scale(1.1);
 }
-
+:hover.logo{
+    transition: transform .3s;
+    transform: scale(1.1);
+}
 @media screen and (max-width: 768px) {
     .homeImg{
         height: 10rem;
@@ -56,7 +59,7 @@
         font-size: 7.4px;
     }
     .headprod{
-        font-size:40px;
+        font-size:30px;
     }
     .conpic{
         height:18rem;
