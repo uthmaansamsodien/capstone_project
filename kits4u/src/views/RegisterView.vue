@@ -3,6 +3,9 @@
       <div class="container">
         <div class="row">
           <form class="form" @submit.prevent="registerUser">
+            <h1 class="headprod"><ins>Register now!</ins>
+            </h1>
+            <br/>
             <div class="form-control-wrapper">
               <span class="inline">
                 <input
@@ -68,8 +71,8 @@
               </span>
             </div>
             <div class="form-control-wrapper">
-              <div class="col">
-                <button type="submit" class="btn btn-danger">
+              <div class="col-btn">
+                <button type="submit" class="btn">
                   Submit
                   <span
                     class="spinner-border spinner-border-sm"
@@ -106,4 +109,19 @@
   };
   </script>
   <style scoped>
+  .form{
+    padding: 2.5rem;
+  }
+  .btn{
+    background-color: #303841;
+    color: gainsboro;
+    border-radius: .8rem;
+    margin-bottom:2rem;
+  }
+  .btn{
+    margin: 2rem;
+  }
+  .form-control-wrapper{
+    padding:1rem;
+  }
   </style>
