@@ -35,11 +35,9 @@ class Users {
   login(req, res) {
     const {userAdd, userPass} = req.body
     // query
-    const query = `
-    SELECT userName, userSurname, userRole,
-    userAdd, userPass, userImg,
+    const query = ` SELECT userID ,userName, userSurname, userRole, userAdd, userPass, userImg
     FROM users
-    WHERE userAdd = '${userAdd}';
+    WHERE userAdd = ${userAdd};
     `
     db.query(query, async (err, result)=>{
         if(err) throw err

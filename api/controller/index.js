@@ -46,8 +46,7 @@ routes.get("/products", (req, res) => {
     users.updateUser(req, res);
   });
 
-  routes.post('/login',
-  bodyParser.json(), (req, res)=>{
+  routes.post('/login',  (req, res)=>{
       users.login(req, res)
   });
 
