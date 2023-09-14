@@ -109,7 +109,7 @@ export default createStore({
           ).data;
           console.log(msg, token, result);
         if (result) {
-          context.commit("setUser", { result, msg });
+          context.commit("setUsers", { result, msg });
           cookies.set("GrantedUserAccess", { token, msg, result });
           authUser.applyToken(token);
           sweet({
@@ -145,11 +145,11 @@ export default createStore({
     },
     
 
-    async logout(context) {
-      context.commit("setUser")
-      cookies.remove("GrantedUserAccess")
-      router.push({ name: "login" })
-    },
+    // async logout(context) {
+    //   context.commit("setUser")
+    //   cookies.remove("GrantedUserAccess")
+    //   router.push({ name: "login" })
+    // },
   }
 })
   

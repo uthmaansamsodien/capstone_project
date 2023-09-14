@@ -1,7 +1,7 @@
 <template>
     <div class="container">
       <div class="row">
-        <form class="form" @submit.prevent="login">
+        <form class="form">
           <div class="form-control-wrapper">
             <span class="inline">
               <input
@@ -40,8 +40,8 @@
           <div class="form-control-wrapper">
             <div class="row">
               <div class="col">
-                <router-link class="d-flex justify-content-center text-decoration-none" to="/register"
-                  >Sign Up</router-link
+                <button class="d-flex justify-content-center text-decoration-none" @submit.prevent="login"
+                  >Sign Up</button
                 >
               </div>
             </div>
@@ -74,12 +74,25 @@
       },
     },
     methods: {
-      login() {
-        this.$store.dispatch('login', this.payload);
-      },
+      // login() {
+      //   this.$store.dispatch('login', this.payload);
+      // },
       // logout() {
       //   this.$store.dispatch("logout", this.payload)
       // },
+    async login() {
+      this.loading = true;
+      try {
+       await this.$store.dispatch('login', this.payload);
+        await new Promise((resolve) => setTimeout(resolve, 2000));
+        console.log('You  are logged in');
+      } catch (error) {
+        console.error(error);
+      } finally {
+        this.loading = false;
+      }
+    },
+  
     },
     beforeCreate() {
       this.$store.dispatch('fetchUsers')
