@@ -8,11 +8,11 @@ const routes = [
     path: '/',
     name: 'home',
     component: HomeView,
-    beforeEnter() {
-      if(!cookies.get('GrantedUserAccess')) {
-      router.push({name: "login"})
-      }
-    }
+    // beforeEnter() {
+    //   if(!cookies.get('GrantedUserAccess')) {
+    //   router.push({name: "login"})
+    //   }
+    // }
   },
   {
     path: '/about',
@@ -49,6 +49,17 @@ const routes = [
     //   }
     // }
   },
+  {
+    path: '/cart',
+    name: 'cart',
+    component: () => import( '../views/CartView.vue'),
+    // beforeEnter() {
+    //   if(!cookies.get('GrantedUserAccess')) {
+    //   router.push({name: "login"})
+    //   }
+    // }
+  },
+
   {
     path: '/contact',
     name: 'contact',

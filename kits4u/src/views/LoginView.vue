@@ -1,4 +1,6 @@
 <template>
+  <h1 class="headprod"><ins>Log in now</ins>
+  </h1>
     <div class="container">
       <div class="row">
         <form class="form">
@@ -26,7 +28,8 @@
           </div>
           <div class="form-control-wrapper">
             <div class="col">
-              <button type="submit" class="btn btn-success">
+              <br/>
+              <button type="submit" class="btn">
                 Log In
                 <span
                   v-show="spinner"
@@ -40,8 +43,7 @@
           <div class="form-control-wrapper">
             <div class="row">
               <div class="col">
-                <button class="d-flex justify-content-center text-decoration-none" @submit.prevent="login"
-                  >Sign Up</button
+                <button class="btn" @submit.prevent="login">Sign Up</button
                 >
               </div>
             </div>
@@ -74,9 +76,9 @@
       },
     },
     methods: {
-      // login() {
-      //   this.$store.dispatch('login', this.payload);
-      // },
+      login() {
+        this.$store.dispatch('login', this.payload);
+      },
       // logout() {
       //   this.$store.dispatch("logout", this.payload)
       // },
@@ -103,4 +105,16 @@
   };
   </script>
   <style scoped>
+  .btn{
+    background-color: #303841;
+    color: gainsboro;
+    border-radius: .8rem;
+    margin-bottom:2rem;
+  }
+  .form-control{
+    margin:1.31rem;
+  }
+  .container{
+    height:38.2vh;
+  }
   </style>
