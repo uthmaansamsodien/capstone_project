@@ -37,6 +37,7 @@ export default createStore({
     setSpinner(state, value) {
       state.spinner = value;
     }
+    
 
   },
   actions: {
@@ -119,7 +120,7 @@ export default createStore({
             icon: "success",
             timer: 3000,
           });
-          router.push({ name: "home" });
+          router.push({ name: 'home' });
         } else {
           sweet({
             title: "Error",

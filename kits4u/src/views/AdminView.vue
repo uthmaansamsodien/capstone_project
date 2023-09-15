@@ -38,7 +38,7 @@
               </tbody>
               </table>
            </div>
-           <h1 class="workhead"><ins>USERS</ins></h1>
+           <h1 class="headprod"><ins>USERS</ins></h1>
            <br/>
            <table class="table table-hover" id="table">
             <thead class="head">

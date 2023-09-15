@@ -3,7 +3,7 @@
     <div class="container text-center">
       <div class="row align-items-center">
         <div class="col">
-          <img class="homeImg"
+          <img class="homeImg animate__animated animate__heartBeat"
             src="https://i.postimg.cc/90xgz3fS/result.png"
             alt="logo"
             />

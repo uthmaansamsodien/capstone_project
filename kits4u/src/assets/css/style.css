@@ -30,13 +30,16 @@
    color:#d72323;
 }
 :hover.card-img-top{
-  
     transition: transform .3s;
-      transform: scale(1.1);
+      transform: scale(0.8);
 }
 :hover.logo{
     transition: transform .3s;
     transform: scale(1.1);
+}
+:hover.card-head{
+    transition: transform .7s;
+      transform: scale(1.1);
 }
 @media screen and (max-width: 768px) {
     .homeImg{
@@ -63,5 +66,8 @@
     }
     .conpic{
         height:18rem;
+    }
+    .col-pic{
+        display: none;
     }
 }
